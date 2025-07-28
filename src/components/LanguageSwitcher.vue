@@ -30,24 +30,24 @@ span {
 }
 
 select {
-    height: 2rem;
-    background-color: #ecdcb3;
-    color: #5A3866;
-    border: 1px solid #5A3866;
-    border-radius: 0.5rem;
-    padding: 0 0.5rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    background-size: 0.65rem;
-    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  height: 2rem;
+  background-color: #ecdcb3;
+  color: #5A3866;
+  border: 1px solid #5A3866;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 0.65rem;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 select:focus {
-    border-color: #382240;
-    background-color: #f6e8c9;
+  border-color: #382240;
+  background-color: #f6e8c9;
 }
 
 .toggle {
