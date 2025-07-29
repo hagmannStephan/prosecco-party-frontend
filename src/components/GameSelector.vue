@@ -13,7 +13,7 @@ const props = defineProps<{
             :src="props.imagePath"
             :alt="props.gameName"
             class="game-selector">
-        <p class="game-name">{{ $t(props.i18nKey) }}</p>
+        <p class="game-name title">{{ $t(props.i18nKey) }}</p>
     </div>
 </template>
 <style lang="scss" scoped>

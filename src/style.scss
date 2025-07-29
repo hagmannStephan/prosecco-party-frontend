@@ -1,56 +1,32 @@
-/* Adding the EBGaramond-Font */
+/* Adding the Oswald-Font */
 /* Normal font */
 @font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-family: 'Oswald';
+  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-}
-
-/* Normal italic font */
-@font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
 }
 
 /* Bold font */
 @font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-family: 'Oswald';
+  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
-}
-
-/* Bold italic font */
-@font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
 }
 
 /* Light font */
 @font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-family: 'Oswald';
+  src: url('/fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
-/* Light italic font */
+/* Adding the FugazOne font */
 @font-face {
-  font-family: 'EBGaramond';
-  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-
-/* Adding the CarterOne font */
-@font-face {
-  font-family: 'CarterOne';
-  src: url('/font/CarterOne/CarterOne-Regular.ttf') format('truetype');
+  font-family: 'FugazOne';
+  src: url('/fonts/FugazOne/FugazOne-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -61,10 +37,12 @@ html {
 }
 
 /* Define SCSS Variables */
-$default-font: 'EBGaramond', system-ui, Avenir, Helvetica, Arial, sans-serif;
+$default-font: 'Oswald', system-ui, Avenir, Helvetica, Arial, sans-serif;
 /* TODO: Set text and background color to a value from the color palette */
 $default-color: #343109; /* Define default text color*/
 $default-bg: #dac4cb; /* Define default background color */
+$contrast-dark: #5A3866;
+$contrast-light: #ecdcb3;
 
 /* Applies base layout and font styling to the whole document body */
 :root {
@@ -111,7 +89,7 @@ body {
 /* Define how something should look if it is selected by the user (e.g. via mouse) */
 ::selection {
   background: #965fab;
-  color: #000;
+  color: $default-color;
 }
 
 /* Important to prevent margin/padding from blowing up layout sizes */
@@ -140,35 +118,35 @@ button {
     min-width: 6rem;
     min-height: 3rem;
     background-color: #856084;
-    border-color: #5A3866;
+    border-color: $contrast-dark;
     border-radius: 0.5rem;
-    color: #ecdcb3;
+    color: $contrast-light;
     margin: 1rem;
     font-size: 1.2rem;
 }
 
 h1 {
-  font-family: 'CarterOne', sans-serif;
+  font-family: 'FugazOne', sans-serif;
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-    font-family: 'CarterOne', sans-serif;
+    font-family: 'FugazOne', sans-serif;
     font-weight: 600;
     font-size: 2.3rem;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-family: 'CarterOne', sans-serif;
+    font-family: 'FugazOne', sans-serif;
     font-weight: 600;
     font-size: 1.7rem;
 }
 
 @mixin text($font-weight) {
-    font-family: 'EBGaramond';
+    font-family: 'Oswald';
     font-weight: $font-weight;
     font-size: 1.4rem;
 }
@@ -194,15 +172,15 @@ input[type="tel"],
 input[type="url"],
 input[type="password"] {
     height: 2.2rem;
-    background-color: #ecdcb3;
-    color: #5A3866;
-    border: 1px solid #5A3866;
+    background-color: $contrast-light;
+    color: $contrast-dark;
+    border: 1px solid $contrast-dark;
     outline: none;
     padding: 0 0.5rem;
     font-size: 1.2rem;
     border-radius: 0.25rem;
     transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    font-family: 'EBGaramond', ;
+    font-family: 'Oswald', ;
     margin: 0.3rem;
 }
 
@@ -220,23 +198,6 @@ input[type="number"] {
   /* TODO: Add styles */
 }
 
-select {
-    height: 2rem;
-    background-color: #ecdcb3;
-    color: #5A3866;
-    border: 1px solid #5A3866;
-    border-radius: 0.5rem;
-    padding: 0 0.5rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    background-size: 0.65rem;
-    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-select:focus {
-    border-color: #382240;
-    background-color: #f6e8c9;
+.title {
+  font-family:'FugazOne', sans-serif;
 }
