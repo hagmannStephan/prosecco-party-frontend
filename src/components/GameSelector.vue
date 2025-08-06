@@ -18,7 +18,7 @@ const props = defineProps<{
 </template>
 <style lang="scss" scoped>
 .game-selector {
-    width: 100%;
+    width: 80%;
     max-width: 280px;
     height: auto;
     display: block;
