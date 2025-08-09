@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 <template>
     <div @click="$router.push(props.gamePath)"
-         class="game-selector-container">
+         class="cursor-pointer">
         <img
             :src="props.imagePath"
             :alt="props.gameName"
@@ -22,9 +22,5 @@ const props = defineProps<{
     max-width: 280px;
     height: auto;
     display: block;
-}
-
-.game-selector-container {
-    cursor: pointer;
 }
 </style>

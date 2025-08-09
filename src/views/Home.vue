@@ -5,16 +5,10 @@ import GameSelector from '@/components/GameSelector.vue';
 <template>
   <h1>Prosecco Party</h1>
   <LanguageSwitcher />
-  <GameSelector class="game-elements"
+  <GameSelector 
+    class="flex flex-col items-center"
     imagePath="images/schnapsidee.png"
     gamePath="/schnapsidee/game-config"
     gameName="Schnapsidee"
     i18nKey="home.schnapsidee-redirect" />
 </template>
-<style lang="scss">
-.game-elements {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>

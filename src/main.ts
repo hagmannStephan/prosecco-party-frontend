@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './style.scss'
+import './tailwind-style.css'
 import { createWebHistory, createRouter } from 'vue-router'
 import {createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
