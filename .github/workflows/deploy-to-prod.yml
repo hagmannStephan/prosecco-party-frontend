@@ -110,10 +110,12 @@ jobs:
             docker rm -f prosecco-party-vue-prod || true
             
             echo 'Starting new container...'
-            docker run -d --name prosecco-party-vue-prod -p 5173:4173 $CURRENT_IMAGE
+            docker run -d --restart unless-stopped --name prosecco-party-vue-dev -p 5172:4173 $CURRENT_IMAGE
 
             echo 'Cleaning up old images...'
-            docker image prune -a -f
+            docker image ls 'ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend-dev' --format '{{.Repository}}:{{.Tag}}' \
+              | grep -v -e '$CURRENT_IMAGE' -e '$PREVIOUS_IMAGE' \
+              | xargs -r docker rmi -f
           "
 
           echo "Deployment completed"
@@ -161,7 +163,7 @@ jobs:
             docker rm -f prosecco-party-vue-prod || true
             
             echo 'Starting rollback container...'
-            docker run -d --name prosecco-party-vue-prod -p 5173:4173 $PREVIOUS_IMAGE
+            docker run -d --restart unless-stopped --name prosecco-party-vue-dev -p 5172:4173 $PREVIOUS_IMAGE
           "
 
           echo "Rollback completed"
